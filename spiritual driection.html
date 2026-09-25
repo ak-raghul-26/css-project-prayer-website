@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HERO SECTION */
+.hero-header {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 25, 22, 0.65);
+  z-index: 1;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+}
+
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.logo-icon {
+  width: 38px; height: 38px;
+  background: #485646; color: #c0d1bd;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-text h3 { font-family: 'Georgia', serif; font-size: 1.1rem; font-weight: 400; }
+.logo-text span { font-size: 0.72rem; color: #b0b5b0; }
+
+.nav-links { display: flex; list-style: none; gap: 28px; }
+.nav-links a { color: #e0e0e0; text-decoration: none; font-size: 0.9rem; }
+
+.nav-actions { display: flex; align-items: center; gap: 16px; }
+.theme-toggle { background: none; border: none; color: #fff; font-size: 1.1rem; cursor: pointer; }
+.nav-btn {
+  background-color: #51624f; color: #fff;
+  padding: 10px 20px; border-radius: 20px; text-decoration: none; font-size: 0.88rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 20px 80px;
+}
+
+.hero-tag {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #a3b8a0;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: 'Georgia', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* ABOUT SPLIT SECTION */
+.about-section {
+  padding: 80px 0;
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.text-block h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #2c352b;
+  margin-bottom: 24px;
+}
+
+.text-block p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.image-block img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* FEATURES GRID SECTION */
+.features-section {
+  background-color: #f7f6f2;
+  padding: 90px 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-header h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #2c352b;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: #777777;
+  line-height: 1.5;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.icon-box {
+  width: 42px;
+  height: 42px;
+  background-color: #eaf0e9;
+  color: #485646;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #2c352b;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #666666;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .split-layout { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 2.4rem; }
+  .nav-links { display: none; }
+}
+
+
+</style>
+
+
+
+
+</head>
+<body>
+   <!-- HERO SECTION -->
+  <header class="hero-header">
+    <div class="hero-overlay"></div>
+    
+    <nav class="navbar">
+      <div class="nav-brand">
+        <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="logo-text">
+          <h3>Stillwater Retreat</h3>
+          <span>A Sanctuary for the Soul</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="retreats.html">Retreats</a></li>
+        <li><a href="spiritual driection.html">Spiritual Direction</a></li>
+        <li><a href="sacred spaces.html">Sacred Spaces</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle"><i class="far fa-moon"></i></button>
+        <a href="#" class="nav-btn">Book a Retreat</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <span class="hero-tag">SPIRITUAL DIRECTION</span>
+      <h1 class="hero-title">Companions for the Journey</h1>
+      <p class="hero-subtitle">
+        Spiritual direction is the ancient practice of meeting regularly with a trained guide to explore your inner life and deepen your relationship with God.
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENT SECTION WITH IMAGE -->
+  <section class="about-section">
+    <div class="container split-layout">
+      <div class="text-block">
+        <h2>What is Spiritual Direction?</h2>
+        <p>
+          Spiritual direction is not counseling or therapy—though it can be healing. It's not advice-giving or problem-solving. Rather, it's a contemplative practice of paying attention together to God's movement in your life.
+        </p>
+        <p>
+          In direction, you bring whatever is on your heart: questions, struggles, joys, doubts, longings. Your director listens deeply, asks reflective questions, and helps you notice where God might be at work.
+        </p>
+        <p>
+          Sessions typically last 60 minutes and occur monthly. Many find that over time, this regular rhythm of reflection transforms their entire spiritual life.
+        </p>
+      </div>
+      <div class="image-block">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1000" alt="Friends laughing outdoors">
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID SECTION -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Is Spiritual Direction Right for You?</h2>
+        <p>Spiritual direction may be particularly helpful if you're experiencing any of the following:</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <div class="icon-box"><i class="fa-regular fa-heart"></i></div>
+          <h3>Seeking Deeper Prayer</h3>
+          <p>You want to move beyond rote prayers into a more intimate, contemplative relationship with God.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <div class="icon-box"><i class="fa-solid fa-arrows-rotate"></i></div>
+          <h3>In Transition</h3>
+          <p>Major life changes—career, relationships, loss—are prompting deeper questions about meaning and purpose.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <div class="icon-box"><i class="fa-regular fa-shield"></i></div>
+          <h3>Facing Discernment</h3>
+          <p>You have important decisions to make and want to listen for God's guidance rather than rely only on logic.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="feature-card">
+          <div class="icon-box"><i class="fa-solid fa-sun"></i></div>
+          <h3>Feeling Spiritually Dry</h3>
+          <p>Your faith feels stale, distant, or disconnected. You long for renewal but aren't sure how to find it.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="feature-card">
+          <div class="icon-box"><i class="fa-regular fa-heart"></i></div>
+          <h3>Processing Grief or Trauma</h3>
+          <p>You want to bring your pain to God and find healing in a spiritually-oriented context.</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="feature-card">
+          <div class="icon-box"><i class="fa-solid fa-border-all"></i></div>
+          <h3>Integrating Life & Faith</h3>
+          <p>You want your spirituality to permeate every area of life—work, relationships, creativity, rest.</p>
+        </div>
+      </div>
+    </div>
+  </section> 
+</body>
+</html>

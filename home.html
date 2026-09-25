@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+<style>
+
+/* Hero Outer Wrapper */
+.first-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),url(mountain.png);
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  
+ 
+}
+
+/* Dark Background Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(20, 22, 25, 0.55);
+  z-index: 1;
+}
+
+/* Header Navbar */
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background-color: #485646;
+  color: #c0d1bd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.logo-text h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.logo-text span {
+  font-size: 0.72rem;
+  color: #b0b5b0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.nav-btn {
+  background-color: #51624f;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #40503e;
+}
+
+/* Hero Body Section (Centered) */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  margin: auto;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-quote {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #d1d5db;
+  margin-bottom: 4px;
+}
+
+.hero-reference {
+  font-size: 0.85rem;
+  color: #8fa38d;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: 'Georgia', serif;
+  font-size: 3.6rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+  max-width: 620px;
+  margin-bottom: 36px;
+}
+
+.hero-btn-group {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #51624f;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #40503e;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
+
+/* Scroll Bottom Indicator */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.scroll-indicator i {
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+
+/* section-two */
+   
+ 
+.Rhythm{
+    text-align: center;
+    color: white;
+}
+
+.second-class p{
+    text-align: center;
+    color: white;
+}
+  
+.body-container{
+     display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.container {
+    padding: 25px;
+    background-color: rgb(6, 59, 6);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+
+.second-class{
+    background-color:rgb(8, 40, 8) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px;
+}
+.prayer{
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* section-three */
+.third-section{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+   background-color: rgba(238, 226, 211, 0.323) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px;
+}
+
+
+
+.jesus-image img{
+  width:100%;
+  height:100vh ;
+ display: block;
+ padding: 30px;
+ border-radius: 40px;
+}
+.story h2{
+     font-size: 35px;
+    margin-bottom: 20px;
+    
+}
+.story p{
+     font-size: 18px;
+    line-height: 1.7;
+}
+
+.status-box{
+    display: grid;
+     grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    
+
+    background-color: white;
+    border-radius: 10px;
+    color: #b87722;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    width: 300px;
+    position: absolute;
+    right: 1000px;
+    bottom: -1390px;
+    left: 400px;
+
+    
+    
+}
+.stat-item {
+    text-align: center;
+    
+}
+     /* section-four */
+
+.fourth-section{
+      background-color: #f5f3ee ;
+      
+       padding: 70px 0 80px;
+    
+      
+      
+    
+      
+
+}
+.text {
+    padding-top: 5px;
+   padding-left: 100px;
+   line-height: 1.1;
+   color: #b87722;
+   font-size: x-large;
+}
+
+
+
+.fourth-section p{
+   
+
+
+margin-left: 100px;
+color: burlywood;
+font-size: x-large;
+
+
+
+}
+.pratice-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+     gap: 25px;
+     padding: 20px 50px;
+   
+    
+
+}
+
+.practice{
+    background-color: #ffffff;
+    border: 1px solid #e2ded6;
+    border-radius: 18px;
+    padding: 30px;
+    min-height: 300px;
+    box-sizing: border-box;
+   
+    
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background: #e4e8e2;
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+    color: #536052;
+    margin-bottom: 22px;
+    font-size: 22px;
+}
+.practice h3 {
+    margin: 0 0 10px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+   
+    color: #493c35;
+}
+
+.practice p {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #987b67;
+}
+
+.practice span {
+    display: block;
+    margin-top: 22px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5;
+    color: #202a25;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+     height:50px;
+     background-color: transparent; 
+    height: 50px;
+    width: 200px;
+    border-radius: 20px;
+    color: white;
+    padding-left: 600px;
+    padding-bottom: 20px;
+    
+  
+   
+    
+   
+}
+
+    /* section-five */
+
+.fifth-section{
+     width: 100%;
+    background: #fdfcf9;
+    padding: 70px 0 80px;
+    box-sizing: border-box;
+}
+.retreat-heading {
+    text-align: center;
+    margin-bottom: 85px;
+}
+
+.retreat-heading h2 {
+    margin: 0;
+    color: #5d5149;
+    font-family: Georgia, serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.retreat-heading p {
+    margin-top: 22px;
+    color: #a58d72;
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    line-height: 1.7;
+}
+.retreat-container {
+    width: 82%;
+    max-width: 1520px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.retreat-card {
+    background: #ffffff;
+    border: 1px solid #e5e0d8;
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+.retreat-image {
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+}
+
+.retreat-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.featured,.spots,
+ .retreat-type {
+    position: absolute;
+
+    padding: 8px 16px;
+    border-radius: 30px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+.featured {
+    top: 20px;
+    left: 20px;
+
+    background: #4d5c4b;
+    color: white;
+}
+.spots {
+    top: 20px;
+    right: 20px;
+
+    background: #ff9d00;
+    color: white;
+}
+
+.retreat-type {
+    left: 20px;
+    bottom: 20px;
+
+    background: #f5f4f2;
+    color: #665b53;
+}
+ .retreat-content {
+    padding: 28px 30px 24px;
+}     
+ .date {
+    margin: 0 0 18px;
+
+    color: #ae9578;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.date span {
+    font-size: 18px;
+}   
+ .retreat-content h3 {
+    margin: 0 0 12px;
+
+    color: #59483e;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3;
+} 
+.retreat-content h4 {
+    margin: 0 0 12px;
+
+    color: #183f4b;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+  
+.description {
+    margin: 0;
+
+    color: #a17f61;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+
+    display: -webkit-box;
+    webkit-line-clamp: 2;
+    webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card-bottom {
+    margin-top: 22px;
+    padding-top: 22px;
+
+    border-top: 1px solid #ebe6df;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    color: #9c8062;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+.card-bottom strong {
+    color: #183f4b;
+    font-size: 23px;
+}
+.all-retreat-btn {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.all-retreat-btn a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 18px 38px;
+
+    background: #4d5c4b;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 40px;
+
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+     font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.all-retreat-btn a:hover {
+    background: #394638;
+    transform: translateY(-2px);
+}
+
+.all-retreat-btn span {
+    font-size: 22px;
+}
+
+.sacred-heading{
+   text-align: center; 
+}
+ 
+
+
+
+
+/* section-six */
+
+
+
+.sectio-six{
+ font-family: 'Georgia', serif;
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+.sanctuary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.sanctuary-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 380px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-tall {
+  grid-row: span 2;
+  height: 784px;
+}
+
+.sanctuary-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.sanctuary-card__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+}
+
+.sanctuary-card__body {
+  position: relative;
+  z-index: 2;
+  padding: 28px;
+}
+
+.sanctuary-card__title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.sanctuary-card__description {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.sanctuary-card__badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.sanctuary-card__pill-badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+.sanctuary-card__schedule {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.85rem;
+  color: #cccccc;
+}
+
+
+/* section-seven */
+
+.team-section{
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f5f4f0;
+  
+  max-width: 1500px;
+  margin: 0 auto;
+margin-top: 80px;
+padding: 60px 20px;
+display: flex;
+flex-direction: column;
+justify-content: center
+
+  
+  
+ 
+  
+}
+
+
+
+
+.team-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 50px auto;
+}
+
+.badge-category {
+  display: inline-block;
+  background-color: #e4e7e1;
+  color: #586953;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.team-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #2b2b2b;
+  margin-bottom: 16px;
+}
+
+.team-subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #726e68;
+}
+
+/* 4-Column Layout */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Avatar Images */
+.avatar-container {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-name {
+  font-family: 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #2b2b2b;
+  margin-bottom: 4px;
+}
+
+.member-role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555555;
+  margin-bottom: 12px;
+}
+
+.member-bio {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #666666;
+  margin-bottom: 16px;
+}
+
+/* Tags */
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  margin-top: auto; /* Pushes content down cleanly */
+}
+
+.pill-tag {
+  background-color: #eae7e1;
+  color: #666057;
+  font-size: 0.75rem;
+  padding: 5px 12px;
+  border-radius: 14px;
+}
+
+.availability {
+  font-size: 0.78rem;
+  color: #888279;
+}
+
+/* Action Button */
+.cta-container {
+  text-align: center;
+}
+
+.primary-btn {
+  display: inline-block;
+  border: 1.5px solid #2d3b2d;
+  color: #2d3b2d;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color: #2d3b2d;
+  color: #ffffff;
+}
+
+
+/* Section Wrapper */
+.stories-section {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f5f4f0;
+  color: #333333;
+}
+
+/* Header Area */
+.stories-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.stories-badge {
+  display: inline-block;
+  background-color: #e4e7e1;
+  color: #586953;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.stories-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #3a3834;
+}
+
+/* 3-Column Grid */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* White Card Base */
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 36px 28px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+/* Quote Icon Top-Left */
+.quote-icon {
+  font-size: 2rem;
+  color: #c7d2c5;
+  margin-bottom: 16px;
+}
+
+/* Italicized Text Body */
+.quote-text {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #5a5651;
+  margin-bottom: 30px;
+}
+
+/* User Profile Block */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.user-role {
+  font-size: 0.82rem;
+  color: #999388;
+}
+
+
+
+
+
+
+
+  
+
+/* CTA Hero Banner */
+.cta-banner {
+  position: relative;
+  background-image: url('photo-1470071459604-3b5ec3a7fe05.jpg'); /* Ungaludaiya background image path */
+  background-size: cover;
+  background-position: center;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 60px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+
+/* Dark Overlay for Text Contrast */
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(20, 25, 20, 0.65);
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.cta-heading {
+  font-family: 'Georgia', serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.cta-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #dcdcdc;
+  margin-bottom: 32px;
+}
+
+/* Buttons Styling */
+.cta-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e2e2e2;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Bottom Prayer Bar */
+.prayer-bar {
+  background-color: #433935;
+  color: #d8cfc4;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.prayer-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 14px;
+  color: #ede7df;
+}
+
+.prayer-times {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  font-size: 0.88rem;
+  color: #a89f91;
+}
+
+.prayer-item strong {
+  color: #ede7df;
+  font-weight: 600;
+}
+
+
+  
+  .prayer-times {
+    gap: 16px;
+    flex-direction: column;
+  }
+
+
+
+/* Footer Container */
+.site-footer {
+  background-color: #4a423d;
+  color: #bfaea2;
+  font-size: 0.9rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 40px 20px;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1fr 1.8fr;
+  gap: 30px;
+}
+
+/* Logo */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #3f4e41;
+  color: #c9d8c5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.logo-text {
+  font-family: 'Georgia', serif;
+  font-size: 1.35rem;
+  color: #f0e6df;
+}
+
+.brand-desc {
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: #c4b5a9;
+}
+
+/* Contact Info */
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #c4b5a9;
+}
+
+.contact-list i {
+  margin-top: 3px;
+}
+
+/* Nav Columns */
+.col-title {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: #e6dad0;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-links a {
+  color: #c4b5a9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+/* Quote Card */
+.quote-card {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-card-icon {
+  font-size: 1.8rem;
+  color: #63574e;
+  margin-bottom: 12px;
+}
+
+.quote-card-text {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #d8ccc2;
+  margin-bottom: 20px;
+}
+
+.quote-card-author {
+  font-size: 0.8rem;
+  color: #a39387;
+  margin-top: auto;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 20px;
+}
+
+.footer-bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  color: #a39387;
+  font-size: 0.85rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-links a {
+  color: #c4b5a9;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffffff;
+}
+
+
+
+
+</style>
+
+
+</head>
+<body>
+<section class="first-section">
+        <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <div class="logo-icon">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <div class="logo-text">
+          <h3>Stillwater Retreat</h3>
+          <span>A Sanctuary for the Soul</span>
+        </div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="retreats.html">Retreats</a></li>
+        <li><a href="spiritual driection.html">Spiritual Direction</a></li>
+        <li><a href="sacred spaces.html">Sacred Spaces</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle Theme">
+          <i class="far fa-moon"></i>
+        </button>
+        <a href="#" class="nav-btn">Book a Retreat</a>
+      </div>
+    </nav>
+
+    <!-- Main Hero Content -->
+    <div class="hero-content">
+      <p class="hero-quote">"Be still, and know that I am God."</p>
+      <span class="hero-reference">Psalm 46:10</span>
+
+      <h1 class="hero-title">Find Rest for Your Soul</h1>
+
+      <p class="hero-subtitle">
+        Step away from the noise. Enter into silence. Discover the quiet place where God meets you.
+      </p>
+
+      <div class="hero-btn-group">
+        <a href="#" class="btn-primary">Explore Retreats &rarr;</a>
+        <a href="#" class="btn-secondary">Begin Spiritual Direction</a>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>ENTER THE STILLNESS</span>
+        <i class="fas fa-arrow-down"></i>
+      </div>
+    </div>
+  </header>
+
+
+</section> 
+
+
+<!-- section-two -->
+
+<section class="second-class">
+<h5>Daily Office</h5>
+<h2 class="Rhythm">A Rhythm of Prayer</h2>
+<p>Four times daily, our community gathers in the chapel to pray. <br>Guests are always welcome to join—or simply know that prayer is being offered on their<br> behalf.</p>
+
+<main class="body-container">
+    <div class="container">
+   <span class="icon">☀</span>
+    <span class="time">6:30 AM</span>
+    <h2>Lauds</h2>
+    <div class="p">Morning prayer to greet the new day with gratitude</div>
+  
+</div>
+
+<div class="container">
+      <span class="icon">◷</span>
+      <span class="time">12:00 PM</span>
+       <h2>Midday Prayer</h2>
+      <div class="p">A brief pause to recenter in the middle of the day</div>
+
+
+</div>
+
+<div class="container">
+    <span class="icon">☀</span>
+    <span class="time">5:30 PM</span>
+    <h2>Vespers</h2>
+    <div class="p">Evening prayer as day tranistion to night</div>
+
+</div>
+
+<div class="container">
+      <span class="icon">☾</span>
+       <span class="time">8:30 PM</span>
+       <h2>Compline</h2>
+       <div class="p">Night prayer to close the day in peaceful surrender</div>
+
+</div>
+
+</main>
+<div class="prayer">All prayer offices are held in our chapel and open to visitors.</div>
+</section>
+
+
+<!-- section-three -->
+
+<section class="third-section">
+<div class="jesus-image">
+    <img src="broje.jpg">
+</div>
+<div class="story">
+    <h2>A Place Set Apart</h2> </h2>
+    <p>Stillwater Retreat was founded in 1987 by a small community of contemplatives seeking to share the gift of silence with a noisy world. What began as a single farmhouse has grown into an 80-acre sanctuary.<br><br>
+
+We are rooted in the Christian contemplative tradition while welcoming seekers of all backgrounds. Our approach is ecumenical, drawing wisdom from Benedictine, Ignatian, and Celtic streams.<br><br>
+
+Whether you come for an hour or a week, our prayer is that you would encounter the God who waits for you in the stillness.</p>
+</div>
+
+
+
+
+</section>
+
+<section class="box-1">
+     <div class="status-box">
+    <div class="stat-item">
+    <h3>35+</h3>
+    <p>Years of Ministry</p>
+</div>
+<div class="stat-item">
+      <h3>12,000+</h3>
+      <p>Retreat Guests</p>
+    </div>
+    <div class="stat-item">
+      <h3>80</h3>
+      <p>Acres of Silence</p>
+    </div>
+    <div class="stat-item">
+      <h3>4</h3>
+      <p>Daily Prayer Offices</p>
+    </div>
+</section>
+
+<!-- section-four -->
+
+
+<section class="fourth-section">
+  <h3 class="text">Ancient Paths to the Present</h3>
+  <p>These time-tested practices create space for encounter with God. During your<br> retreat, you'll be introduced to practices suited to your spiritual journey.</p>
+   
+  <div class="pratice-container">
+
+  
+    <div class="practice">
+     <div class="icon">◎</div>
+    <h3>Centering Prayer</h3>
+    <p>A method of silent prayer that prepares us <br>to receive the gift of contemplative prayer,<br> opening our minds and hearts to God<br> beyond words.</p>
+    <span>20 minutes</span>
+</div>
+
+<div class="practice">
+    <div class="icon">📖</div>
+    <h3>Lectio Divina</h3>
+    <p>Sacred reading of Scripture—a slow,<br> contemplative approach to engaging with<br> the Word that invites transformation.</p>
+<span>30-45 minutes</span>
+</div>
+
+<div class="practice">
+    <div class="icon">🚀</div>
+    <h3>Walking Meditation</h3>
+    <p>Mindful walking through our grounds,<br> bringing awareness to each step as a form<br> of moving prayer.</p>
+    <span>15-30 Minutes</span>
+</div>
+
+<div class="practice">
+    <div class="icon">◎</div>
+    <h3>Labyrinth Walk</h3>
+    <p>An ancient practice of walking a winding<br> path as a metaphor for the spiritual<br> journey—releasing, receiving, returning.</p>
+    <span>20-40 MINUTES</span>
+</div>
+
+<div class="practice">
+  <div class="icon">◉</div>   
+ <h3>Examen</h3>   
+ <p>A daily review of consciousness, noticing<br> where God was present and where we<br> may have missed the invitation.</p>
+ <span>15 MINUTES</span>
+</div>
+
+<div class="practice">
+   <div class="icon">♫</div>
+    <h3>Silent Sitting</h3>
+    <p>Simply being present in silence, without<br> agenda, allowing God to work in the<br> depths of our being.</p>
+    <span>open</span>
+</div>
+</div>
+
+<section class="button">
+    <button class="explore">Explore Guided Practices</button>
+</section>
+
+</section>
+
+<!-- section-five -->
+
+
+<section class="fifth-section">
+    
+  <div class="retreat-heading">
+        <h2>Step Away. Go Deeper.</h2>
+        <p>
+            From single-day refreshers to week-long immersions, find the retreat that
+            <br>
+            meets you where you are.
+        </p>
+    </div>
+
+    <div class="retreat-container">
+
+        <!-- CARD 1 -->
+        <div class="retreat-card">
+
+            <div class="retreat-image">
+                <img src="image mountain.jpg" alt="Silent Retreat">
+
+                <span class="featured">Featured</span>
+                <span class="spots">4 spots left</span>
+
+                <span class="retreat-type">Silent Retreat</span>
+            </div>
+
+            <div class="retreat-content">
+
+                <p class="date">
+                    <span>▣</span>
+                    April 14-19, 2025 &nbsp;·&nbsp; 5 nights
+                </p>
+
+                <h3>Spring Silence Retreat</h3>
+
+                <h4>Five Days of Guided Silence</h4>
+
+                <p class="description">
+                    Enter into extended silence with the support of daily
+                    spiritual direction, communal meals, and thoughtful reflection.
+                </p>
+
+                <div class="card-bottom">
+                    <span>with&nbsp; Sr. Margaret Anne</span>
+                    <strong>$795</strong>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- CARD 2 -->
+        <div class="retreat-card">
+
+            <div class="retreat-image">
+                <img src="image flower.jpg" alt="Weekend Retreat">
+
+                <span class="retreat-type">Weekend Retreat</span>
+            </div>
+
+            <div class="retreat-content">
+
+                <p class="date">
+                    <span>▣</span>
+                    March 7-9, 2025 &nbsp;·&nbsp; 2 nights
+                </p>
+
+                <h3>Introduction to Contemplative Prayer</h3>
+
+                <h4>Weekend Immersion</h4>
+
+                <p class="description">
+                    Learn the foundations of centering prayer, lectio divina,
+                    and other contemplative practices in a peaceful setting.
+                </p>
+
+                <div class="card-bottom">
+                    <span>with&nbsp; Fr. Thomas Keating Society</span>
+                    <strong>$395</strong>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- CARD 3 -->
+        <div class="retreat-card">
+
+            <div class="retreat-image">
+                <img src="image tree.jpg" alt="Day Retreat">
+
+                <span class="retreat-type">Day Retreat</span>
+            </div>
+
+            <div class="retreat-content">
+
+                <p class="date">
+                    <span>▣</span>
+                    First Saturday monthly &nbsp;·&nbsp; 9 AM - 5 PM
+                </p>
+
+                <h3>Day of Rest</h3>
+
+                <h4>Monthly Day Retreat</h4>
+
+                <p class="description">
+                    A single day set apart for silence, prayer, and rest.
+                    Includes access to sacred spaces.
+                </p>
+
+                <div class="card-bottom">
+                    <span>with&nbsp; Various Directors</span>
+                    <strong>$85</strong>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- BUTTON -->
+    <div class="all-retreat-btn">
+        <a href="#">View All Retreats </span></a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- section six -->
+
+<section class="six">
+
+<div class="sanctuary-grid">
+    
+    <!-- Card 1: The Chapel -->
+    <div class="sanctuary-card feature-tall">
+      <img src="home.jpg" alt="The Chapel" class="sanctuary-card__image">
+      <div class="sanctuary-card__scrim"></div>
+      <div class="sanctuary-card__body">
+        <h2 class="sanctuary-card__title">The Chapel</h2>
+        <p class="sanctuary-card__description">Our intimate stone chapel seats 40 and hosts the Daily Office. Simple, unadorned, with natural light streaming through clear glass windows.</p>
+        <div class="sanctuary-card__badge-group">
+          <span class="sanctuary-card__pill-badge">Daily Office prayers</span>
+          <span class="sanctuary-card__pill-badge">Private prayer hours</span>
+          <span class="sanctuary-card__pill-badge">Candle lighting</span>
+        </div>
+        <div class="sanctuary-card__schedule">
+          <i class="far fa-clock sanctuary-card__clock-icon"></i>
+          <span class="sanctuary-card__hours-text">Open 5:30 AM - 10:00 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: The Labyrinth -->
+    <div class="sanctuary-card">
+      <img src="forest tress.jpg" alt="The Labyrinth" class="sanctuary-card__image">
+      <div class="sanctuary-card__scrim"></div>
+      <div class="sanctuary-card__body">
+        <h2 class="sanctuary-card__title">The Labyrinth</h2>
+        <p class="sanctuary-card__description">A classical 11-circuit Chartres-style labyrinth set in a meadow, offering a walking meditation path for releasing, receiving, and returning.</p>
+        <div class="sanctuary-card__badge-group">
+          <span class="sanctuary-card__pill-badge">Self-guided walks</span>
+          <span class="sanctuary-card__pill-badge">Guided group walks monthly</span>
+          <span class="sanctuary-card__pill-badge">Wheelchair accessible path</span>
+        </div>
+        <div class="sanctuary-card__schedule">
+          <i class="far fa-clock sanctuary-card__clock-icon"></i>
+          <span class="sanctuary-card__hours-text">Dawn to dusk</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Prayer Garden -->
+    <div class="sanctuary-card">
+      <img src="garden.jpg" alt="Prayer Garden" class="sanctuary-card__image">
+      <div class="sanctuary-card__scrim"></div>
+      <div class="sanctuary-card__body">
+        <h2 class="sanctuary-card__title">Prayer Garden</h2>
+        <p class="sanctuary-card__description">A walled garden with benches, a small fountain, and plantings chosen for their symbolic and sensory qualities. A place to sit with God.</p>
+        <div class="sanctuary-card__badge-group">
+          <span class="sanctuary-card__pill-badge">Sensory plantings</span>
+          <span class="sanctuary-card__pill-badge">Water feature</span>
+          <span class="sanctuary-card__pill-badge">Sheltered seating</span>
+        </div>
+        <div class="sanctuary-card__schedule">
+          <i class="far fa-clock sanctuary-card__clock-icon"></i>
+          <span class="sanctuary-card__hours-text">Open 6:00 AM - 9:00 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Forest Trails -->
+    <div class="sanctuary-card">
+      <img src="forest.jpg" alt="Forest Trails" class="sanctuary-card__image">
+      <div class="sanctuary-card__scrim"></div>
+      <div class="sanctuary-card__body">
+        <h2 class="sanctuary-card__title">Forest Trails</h2>
+        <p class="sanctuary-card__description">Three miles of wooded trails wind through our 80-acre property, with stations for prayer and benches for rest along the way.</p>
+        <div class="sanctuary-card__badge-group">
+          <span class="sanctuary-card__pill-badge">3 miles of paths</span>
+          <span class="sanctuary-card__pill-badge">Prayer stations</span>
+          <span class="sanctuary-card__pill-badge">Wildlife observation</span>
+        </div>
+        <div class="sanctuary-card__schedule">
+          <i class="far fa-clock sanctuary-card__clock-icon"></i>
+          <span class="sanctuary-card__hours-text">Daylight hours</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- section-seven -->
+
+
+<section class="team-section">
+
+ <div class="team-header">
+      <span class="badge-category">SPIRITUAL DIRECTION</span>
+      <h2 class="team-title">Companions for the Journey</h2>
+      <p class="team-subtitle">
+        Our trained spiritual directors offer one-on-one guidance for those seeking deeper connection with God. Each brings unique gifts to the sacred work of accompaniment.
+      </p>
+    </div>
+
+    <!-- Team Members Grid -->
+    <div class="team-grid">
+      
+      <!-- Member 1 -->
+      <div class="member-card">
+        <div class="avatar-container">
+          <img src="girl1.jpg" alt="Sr. Margaret Anne, OSB" class="avatar-img">
+        </div>
+        <h3 class="member-name">Sr. Margaret Anne, OSB</h3>
+        <p class="member-role">Director of Spiritual Formation</p>
+        <p class="member-bio">
+          A Benedictine sister with 30 years of experience in spiritual direction, Sr. Margaret Anne specializes in guiding people through major life transitions and deepening contemplative practice.
+        </p>
+        <div class="tag-group">
+          <span class="pill-tag">Centering Prayer</span>
+          <span class="pill-tag">Discernment</span>
+          <span class="pill-tag">Life Transitions</span>
+        </div>
+        <p class="availability">Available Monday - Thursday</p>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="member-card">
+        <div class="avatar-container">
+          <img src="boy1.jpg" alt="Fr. David Brennan" class="avatar-img">
+        </div>
+        <h3 class="member-name">Fr. David Brennan</h3>
+        <p class="member-role">Retreat Director</p>
+        <p class="member-bio">
+          An ordained priest and trained spiritual director, Fr. David brings 20 years of retreat leadership and a gentle, listening presence to those seeking God.
+        </p>
+        <div class="tag-group">
+          <span class="pill-tag">Ignatian Spirituality</span>
+          <span class="pill-tag">Scripture Prayer</span>
+          <span class="pill-tag">Vocational Discernment</span>
+        </div>
+        <p class="availability">Available Tuesday - Saturday</p>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="member-card">
+        <div class="avatar-container">
+          <img src="girl2.jpg" alt="Dr. Sarah Chen" class="avatar-img">
+        </div>
+        <h3 class="member-name">Dr. Sarah Chen</h3>
+        <p class="member-role">Contemplative Psychologist</p>
+        <p class="member-bio">
+          Holding both a PhD in psychology and certification in spiritual direction, Sarah integrates therapeutic wisdom with contemplative traditions for deep healing work.
+        </p>
+        <div class="tag-group">
+          <span class="pill-tag">Grief & Loss</span>
+          <span class="pill-tag">Trauma-Informed Care</span>
+          <span class="pill-tag">Burnout Recovery</span>
+        </div>
+        <p class="availability">Available Wednesday - Friday</p>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="member-card">
+        <div class="avatar-container">
+          <img src="boy2.jpg" alt="Brother Thomas" class="avatar-img">
+        </div>
+        <h3 class="member-name">Brother Thomas</h3>
+        <p class="member-role">Grounds & Prayer Guide</p>
+        <p class="member-bio">
+          A lay brother who tends our gardens and leads walking meditations, Thomas embodies the connection between nature, labor, and prayer.
+        </p>
+        <div class="tag-group">
+          <span class="pill-tag">Walking Meditation</span>
+          <span class="pill-tag">Labyrinth Guidance</span>
+          <span class="pill-tag">Creation Spirituality</span>
+        </div>
+        <p class="availability">Available Daily (outdoor practices)</p>
+      </div>
+
+    </div>
+
+    <!-- CTA Button -->
+    <div class="cta-container">
+      <a href="#" class="primary-btn">Begin Spiritual Direction </a>
+    </div>   
+
+
+
+</section>
+
+
+<section class="stories-section">
+    <!-- Header -->
+    <div class="stories-header">
+      <span class="stories-badge">STORIES</span>
+      <h2 class="stories-title">Transformed by Stillness</h2>
+    </div>
+
+    <!-- Testimonial Cards Container -->
+    <div class="stories-grid">
+      
+      <!-- Card 1 -->
+      <div class="testimonial-card">
+        <i class="fa-solid fa-quote-left quote-icon"></i>
+        <p class="quote-text">
+          "I came to Stillwater burned out and empty. I left with a renewed sense of purpose and a practice that sustains me daily. The silence was terrifying at first—then it became the greatest gift."
+        </p>
+        <div class="user-profile">
+          <img src="boy1.jpg" alt="Michael Torres" class="user-avatar">
+          <div class="user-info">
+            <h4 class="user-name">Michael Torres</h4>
+            <span class="user-role">After a 5-day silent retreat</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testimonial-card">
+        <i class="fa-solid fa-quote-left quote-icon"></i>
+        <p class="quote-text">
+          "Spiritual direction with Sr. Margaret Anne changed my life. For the first time, I felt truly heard—not just by her, but by God through her."
+        </p>
+        <div class="user-profile">
+          <img src="girl1.jpg" alt="Jennifer Walsh" class="user-avatar">
+          <div class="user-info">
+            <h4 class="user-name">Jennifer Walsh</h4>
+            <span class="user-role">Ongoing spiritual direction</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="testimonial-card">
+        <i class="fa-solid fa-quote-left quote-icon"></i>
+        <p class="quote-text">
+          "The labyrinth walk brought up things I had been avoiding for years. In that slow, winding path, I finally found the courage to surrender them."
+        </p>
+        <div class="user-profile">
+          <img src="boy2.jpg" alt="David Park" class="user-avatar">
+          <div class="user-info">
+            <h4 class="user-name">David Park</h4>
+            <span class="user-role">Day retreat participant</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+   <section class="cta-banner">
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <h2 class="cta-title">Begin Your Journey Inward</h2>
+      <p class="cta-description">
+        Whether you're seeking rest, direction, or a deeper relationship with God, we're here to walk alongside you. Take the first step into stillness.
+      </p>
+      <div class="cta-button-group">
+         <a class="btn btn-primary">Book a Retreat </a>
+        <a  class="btn btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Prayer Schedule Bar -->
+  <div class="prayer-bar">
+    <h4 class="prayer-title">Join Us in Prayer</h4>
+    <div class="prayer-schedule">
+      <span class="prayer-item">Lauds &middot; <strong>6:30 AM</strong></span>
+      <span class="prayer-item">Midday Prayer &middot; <strong>12:00 PM</strong></span>
+      <span class="prayer-item">Vespers &middot; <strong>5:30 PM</strong></span>
+      <span class="prayer-item">Compline &middot; <strong>8:30 PM</strong></span>
+    </div>
+  </div>
+
+  
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Brand & Contact Info Column -->
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <span class="logo-text">Stillwater Retreat</span>
+        </div>
+        
+        <p class="brand-desc">
+          A contemplative retreat center offering silent retreats, spiritual direction, and sacred spaces for rest and renewal.
+        </p>
+        
+        <ul class="contact-list">
+          <li><i class="far fa-envelope"></i> <span>welcome@stillwaterretreat.org</span></li>
+          <li><i class="fas fa-phone-alt"></i> <span>(555) 234-5678</span></li>
+          <li><i class="fas fa-map-marker-alt"></i> <span>1247 Monastery Road<br>Cedar Valley, OR 97330</span></li>
+        </ul>
+      </div>
+
+      <!-- Experience Links -->
+      <div class="footer-col links-col">
+        <h4 class="col-title">EXPERIENCE</h4>
+        <ul class="footer-links">
+          <li><a href="#">Retreats</a></li>
+          <li><a href="#">Spiritual Direction</a></li>
+          <li><a href="#">Day Visits</a></li>
+          <li><a href="#">Group Bookings</a></li>
+        </ul>
+      </div>
+
+      <!-- Explore Links -->
+      <div class="footer-col links-col">
+        <h4 class="col-title">EXPLORE</h4>
+        <ul class="footer-links">
+          <li><a href="#">Sacred Spaces</a></li>
+          <li><a href="#">Daily Office</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect Links -->
+      <div class="footer-col links-col">
+        <h4 class="col-title">CONNECT</h4>
+        <ul class="footer-links">
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Volunteer</a></li>
+        </ul>
+      </div>
+
+      <!-- Verse / Quote Card Column -->
+      <div class="footer-col quote-col">
+        <div class="quote-card">
+          <i class="fa-solid fa-quote-left quote-card-icon"></i>
+          <p class="quote-card-text">
+            "Come to me, all you who are weary and burdened, and I will give you rest."
+          </p>
+          <span class="quote-card-author">Matthew 11:28</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="copyright">&copy; 2025 Stillwater Retreat. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+   
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

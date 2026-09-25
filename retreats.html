@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    /* GLOBAL RESETS & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #333333;
+  background-color: #fbfbfa;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HERO SECTION */
+.hero-header {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+  background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 36, 28, 0.78);
+  z-index: 1;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #b8c9b5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.logo-text span {
+  font-size: 0.72rem;
+  color: #a3b0a0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #d5ded3;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.nav-links a.active {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.nav-btn {
+  background-color: #435241;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: background-color 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #354234;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 20px 70px;
+}
+
+.hero-tag {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #a3b8a0;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-family: 'Georgia', serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #d8e0d7;
+}
+
+/* FILTER BUTTONS SECTION */
+.filter-section {
+  background-color: #ffffff;
+  padding: 24px 0;
+  border-bottom: 1px solid #f0eee9;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #f5f3ef;
+  color: #6a645a;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: #eae6df;
+}
+
+.filter-btn.active {
+  background-color: #485646;
+  color: #ffffff;
+}
+
+/* RETREAT CARDS GRID */
+.retreats-section {
+  padding: 50px 0 80px;
+}
+
+.retreats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.retreat-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  border: 1px solid #f0ede8;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-featured {
+  top: 12px;
+  left: 12px;
+  background-color: rgba(30, 45, 34, 0.75);
+  color: #ffffff;
+}
+
+.badge-spots {
+  top: 12px;
+  right: 12px;
+  background-color: #ff9800;
+  color: #ffffff;
+}
+
+.badge-category {
+  bottom: 12px;
+  left: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333333;
+}
+
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #8c857b;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #2c352b;
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #70675c;
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #6a645a;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  margin-bottom: 16px;
+  border-top: 1px solid #f5f2ed;
+}
+
+.card-author {
+  font-size: 0.82rem;
+  color: #8c857b;
+}
+
+.card-author strong {
+  color: #333;
+}
+
+.card-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c352b;
+}
+
+.card-btn {
+  display: block;
+  text-align: center;
+  background-color: #485646;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.card-btn:hover {
+  background-color: #384436;
+}
+
+/* CUSTOM RETREATS SECTION */
+.custom-retreats-section {
+  background-color: #f4f1ea;
+  padding: 80px 0;
+}
+
+.custom-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.section-tag {
+  display: inline-block;
+  background-color: #e4dfd4;
+  color: #6a645a;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.custom-content h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #2c352b;
+  margin-bottom: 16px;
+}
+
+.custom-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #6a645a;
+  margin-bottom: 24px;
+}
+
+.custom-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.custom-features li {
+  font-size: 0.9rem;
+  color: #554f46;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-features li i {
+  color: #485646;
+  font-size: 0.85rem;
+}
+
+.custom-btn {
+  display: inline-block;
+  background-color: #485646;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.custom-btn:hover {
+  background-color: #384436;
+}
+
+.custom-image-wrap img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 992px) {
+  .retreats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .retreats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .custom-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+}
+    
+</style>
+
+
+
+</head>
+<body>
+    
+<!-- HERO SECTION -->
+  <header class="hero-header">
+    <div class="hero-overlay"></div>
+    
+    <nav class="navbar">
+      <div class="nav-brand">
+        <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="logo-text">
+          <h3>Stillwater Retreat</h3>
+          <span>A Sanctuary for the Soul</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="retreats.html" class="active">Retreats</a></li>
+        <li><a href="spiritual driection.html">Spiritual Direction</a></li>
+        <li><a href="sacred spaces.html">Sacred Spaces</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle theme"><i class="far fa-moon"></i></button>
+        <a href="#" class="nav-btn">Book a Retreat</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <span class="hero-tag">RETREAT PROGRAMS</span>
+      <h1 class="hero-title">Step Away. Go Deeper.</h1>
+      <p class="hero-subtitle">
+        From single-day refreshers to week-long immersions, find the retreat that meets you where you are on your spiritual journey.
+      </p>
+    </div>
+  </header>
+
+  <!-- FILTER BUTTONS -->
+  <section class="filter-section">
+    <div class="container filter-container">
+      <button class="filter-btn active">All Retreats</button>
+      <button class="filter-btn">Silent</button>
+      <button class="filter-btn">Guided</button>
+      <button class="filter-btn">Day</button>
+      <button class="filter-btn">Weekend</button>
+      <button class="filter-btn">Week-Long</button>
+    </div>
+  </section>
+
+  <!-- RETREAT CARDS GRID SECTION -->
+  <section class="retreats-section">
+    <div class="container retreats-grid">
+      
+      <!-- Card 1 -->
+      <div class="retreat-card">
+        <div class="card-image-wrap">
+          <img src="image mountain.jpg" alt="Green hills landscape">
+          <span class="badge badge-featured">Featured</span>
+          <span class="badge badge-spots">4 spots left</span>
+          <span class="badge badge-category">Silent Retreat</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span><i class="fa-regular fa-calendar"></i> April 14-19, 2025</span>
+            <span>&bull;</span>
+            <span>5 nights</span>
+          </div>
+          <h3 class="card-title">Spring Silence Retreat</h3>
+          <p class="card-subtitle">Five Days of Guided Silence</p>
+          <p class="card-description">
+            Enter into extended silence with the support of daily spiritual direction, communal meals, and the rhythm of the Daily Office. This retreat offers space for deep listening and renewal.
+          </p>
+          <div class="card-footer">
+            <span class="card-author">with <strong>Sr. Margaret Anne</strong></span>
+            <span class="card-price">$795</span>
+          </div>
+          <a href="#" class="card-btn">Register Now &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="retreat-card">
+        <div class="card-image-wrap">
+          <img src="image flower.jpg" alt="Water lily floating">
+          <span class="badge badge-category">Weekend Retreat</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span><i class="fa-regular fa-calendar"></i> March 7-9, 2025</span>
+            <span>&bull;</span>
+            <span>2 nights</span>
+          </div>
+          <h3 class="card-title">Introduction to Contemplative Prayer</h3>
+          <p class="card-subtitle">Weekend Immersion</p>
+          <p class="card-description">
+            Learn the foundations of centering prayer, lectio divina, and other contemplative practices in a supportive community setting.
+          </p>
+          <div class="card-footer">
+            <span class="card-author">with <strong>Fr. Thomas Keating Society</strong></span>
+            <span class="card-price">$395</span>
+          </div>
+          <a href="#" class="card-btn">Register Now &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="retreat-card">
+        <div class="card-image-wrap">
+          <img src="image tree.jpg" alt="Sunlight through green trees">
+          <span class="badge badge-category">Day Retreat</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span><i class="fa-regular fa-calendar"></i> First Saturday monthly</span>
+            <span>&bull;</span>
+            <span>9 AM - 5 PM</span>
+          </div>
+          <h3 class="card-title">Day of Rest</h3>
+          <p class="card-subtitle">Monthly Day Retreat</p>
+          <p class="card-description">
+            A single day set apart for silence, prayer, and rest. Includes access to all sacred spaces, optional spiritual direction, and a contemplative lunch.
+          </p>
+          <div class="card-footer">
+            <span class="card-author">with <strong>Various Directors</strong></span>
+            <span class="card-price">$85</span>
+          </div>
+          <a href="#" class="card-btn">Register Now &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="retreat-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=600" alt="Misty mountain landscape">
+          <span class="badge badge-spots">2 spots left</span>
+          <span class="badge badge-category">Week Retreat</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span><i class="fa-regular fa-calendar"></i> June 8-16, 2025</span>
+            <span>&bull;</span>
+            <span>8 nights</span>
+          </div>
+          <h3 class="card-title">Ignatian Spiritual Exercises</h3>
+          <p class="card-subtitle">8-Day Directed Retreat</p>
+          <p class="card-description">
+            Experience the transformative Spiritual Exercises of St. Ignatius with daily one-on-one direction. A profound journey of prayer, discernment, and encounter.
+          </p>
+          <div class="card-footer">
+            <span class="card-author">with <strong>Fr. James Martin, SJ</strong></span>
+            <span class="card-price">$1,295</span>
+          </div>
+          <a href="#" class="card-btn">Register Now &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="retreat-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600" alt="Person meditating in sunset glow">
+          <span class="badge badge-spots">6 spots left</span>
+          <span class="badge badge-category">Guided Retreat</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span><i class="fa-regular fa-calendar"></i> May 16-18, 2025</span>
+            <span>&bull;</span>
+            <span>2 nights</span>
+          </div>
+          <h3 class="card-title">Healing & Restoration</h3>
+          <p class="card-subtitle">Guided Retreat for the Weary</p>
+          <p class="card-description">
+            For those carrying grief, burnout, or life transitions. Gentle guidance, therapeutic practices, and space to simply be held in love.
+          </p>
+          <div class="card-footer">
+            <span class="card-author">with <strong>Dr. Sarah Chen</strong></span>
+            <span class="card-price">$425</span>
+          </div>
+          <a href="#" class="card-btn">Register Now &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="retreat-card">
+        <div class="card-image-wrap">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600" alt="Fountain pen writing on notebook">
+          <span class="badge badge-category">Weekend Retreat</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span><i class="fa-regular fa-calendar"></i> April 25-27, 2025</span>
+            <span>&bull;</span>
+            <span>2 nights</span>
+          </div>
+          <h3 class="card-title">Writer's Contemplative Retreat</h3>
+          <p class="card-subtitle">Silence & Creativity</p>
+          <p class="card-description">
+            For writers, artists, and creatives seeking to connect their craft with their spiritual life. Includes private writing time, group reflection, and individual direction.
+          </p>
+          <div class="card-footer">
+            <span class="card-author">with <strong>Anne Lamott</strong></span>
+            <span class="card-price">$445</span>
+          </div>
+          <a href="#" class="card-btn">Register Now &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CUSTOM RETREATS SECTION -->
+  <section class="custom-retreats-section">
+    <div class="container">
+      <div class="custom-card">
+        <div class="custom-content">
+          <span class="section-tag">CUSTOM RETREATS</span>
+          <h2>Private & Group Retreats</h2>
+          <p class="custom-desc">
+            Looking for something more tailored? We welcome groups of 8-40 for custom retreats. Whether it's a church staff retreat, leadership team, or group of friends, we'll work with you to design a meaningful experience.
+          </p>
+
+          <ul class="custom-features">
+            <li><i class="fa-solid fa-check"></i> Custom programming and facilitation</li>
+            <li><i class="fa-solid fa-check"></i> Private use of meeting spaces</li>
+            <li><i class="fa-solid fa-check"></i> Meals and accommodations included</li>
+            <li><i class="fa-solid fa-check"></i> Optional spiritual direction sessions</li>
+          </ul>
+
+          <a href="#" class="custom-btn">Inquire About Group Retreats &rarr;</a>
+        </div>
+
+        <div class="custom-image-wrap">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800" alt="Group of friends looking out over mountains">
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+
+
+
+</body>
+</html>

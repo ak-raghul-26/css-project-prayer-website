@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333333;
+  background-color: #fcfbf9;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HERO SECTION */
+.hero-header {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 36, 26, 0.75);
+  z-index: 1;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+}
+
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.logo-icon {
+  width: 38px; height: 38px;
+  background: #3e4d3c; color: #b8c9b5;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-text h3 { font-family: 'Georgia', serif; font-size: 1.1rem; font-weight: 400; }
+.logo-text span { font-size: 0.72rem; color: #a3b0a0; }
+
+.nav-links { display: flex; list-style: none; gap: 28px; }
+.nav-links a { color: #d5ded3; text-decoration: none; font-size: 0.9rem; }
+.nav-links a.active { color: #ffffff; font-weight: 500; }
+
+.nav-actions { display: flex; align-items: center; gap: 16px; }
+.theme-toggle { background: none; border: none; color: #fff; font-size: 1.1rem; cursor: pointer; }
+.nav-btn {
+  background-color: #435241; color: #fff;
+  padding: 10px 20px; border-radius: 20px; text-decoration: none; font-size: 0.88rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 20px 80px;
+}
+
+.hero-tag {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #a3b8a0;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: 'Georgia', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #d8e0d7;
+}
+
+/* SPACES SECTION */
+.spaces-section {
+  padding: 100px 0;
+}
+
+.space-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.space-item:last-child {
+  margin-bottom: 0;
+}
+
+.space-item.reverse {
+  direction: rtl;
+}
+
+.space-item.reverse .space-details {
+  direction: ltr;
+}
+
+.space-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+.space-details h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #3b423a;
+  margin-bottom: 18px;
+}
+
+.space-description {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #8c8275;
+  margin-bottom: 28px;
+}
+
+.features-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.feature-item {
+  font-size: 0.95rem;
+  color: #8c8275;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-item i {
+  font-size: 0.8rem;
+  color: #5c685a;
+}
+
+.time-info {
+  font-size: 0.88rem;
+  color: #9e9487;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .space-item, .space-item.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 30px;
+    margin-bottom: 70px;
+  }
+  
+  .space-image img {
+    height: 320px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+}
+
+
+
+
+
+</style>
+
+
+
+
+
+
+<body>
+    
+
+
+    <!-- HERO SECTION -->
+  <header class="hero-header">
+    <div class="hero-overlay"></div>
+    
+    <nav class="navbar">
+      <div class="nav-brand">
+        <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="logo-text">
+          <h3>Stillwater Retreat</h3>
+          <span>A Sanctuary for the Soul</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="retreats.html">Retreats</a></li>
+        <li><a href="spiritual driection.html">Spiritual Direction</a></li>
+        <li><a href="sacred spaces.html" class="active">Sacred Spaces</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle"><i class="far fa-moon"></i></button>
+        <a href="#" class="nav-btn">Book a Retreat</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <span class="hero-tag">SACRED SPACES</span>
+      <h1 class="hero-title">80 Acres of Sanctuary</h1>
+      <p class="hero-subtitle">
+        Our grounds are designed to invite encounter—with nature, with silence, with God. Wander freely and discover the space that speaks to your soul.
+      </p>
+    </div>
+  </header>
+
+  <!-- SPACES SECTION -->
+  <section class="spaces-section">
+    <div class="container">
+
+      <!-- Space 1: The Chapel (Image Left) -->
+      <div class="space-item">
+        <div class="space-image">
+          <img src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?q=80&w=1000" alt="The Chapel">
+        </div>
+        <div class="space-details">
+          <h2>The Chapel</h2>
+          <p class="space-description">
+            Our intimate stone chapel seats 40 and hosts the Daily Office. Simple, unadorned, with natural light streaming through clear glass windows.
+          </p>
+          <div class="features-list">
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Daily Office prayers</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Private prayer hours</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Candle lighting</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Kneelers available</div>
+          </div>
+          <div class="time-info">
+            <i class="fa-regular fa-clock"></i> Open 5:30 AM - 10:00 PM
+          </div>
+        </div>
+      </div>
+
+      <!-- Space 2: The Labyrinth (Image Right) -->
+      <div class="space-item reverse">
+        <div class="space-image">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1000" alt="The Labyrinth">
+        </div>
+        <div class="space-details">
+          <h2>The Labyrinth</h2>
+          <p class="space-description">
+            A classical 11-circuit Chartres-style labyrinth set in a meadow, offering a walking meditation path for releasing, receiving, and returning.
+          </p>
+          <div class="features-list">
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Self-guided walks</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Guided group walks monthly</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Wheelchair accessible path</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Lit by lanterns at dusk</div>
+          </div>
+          <div class="time-info">
+            <i class="fa-regular fa-clock"></i> Dawn to dusk
+          </div>
+        </div>
+      </div>
+
+      <!-- Space 3: Prayer Garden (Image Left) -->
+      <div class="space-item">
+        <div class="space-image">
+          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1000" alt="Prayer Garden">
+        </div>
+        <div class="space-details">
+          <h2>Prayer Garden</h2>
+          <p class="space-description">
+            A walled garden with benches, a small fountain, and plantings chosen for their symbolic and sensory qualities. A place to sit with God.
+          </p>
+          <div class="features-list">
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Sensory plantings</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Water feature</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Sheltered seating</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Scripture stones</div>
+          </div>
+          <div class="time-info">
+            <i class="fa-regular fa-clock"></i> Open 6:00 AM - 9:00 PM
+          </div>
+        </div>
+      </div>
+
+      <!-- Space 4: Forest Trails (Image Right) -->
+      <div class="space-item reverse">
+        <div class="space-image">
+          <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1000" alt="Forest Trails">
+        </div>
+        <div class="space-details">
+          <h2>Forest Trails</h2>
+          <p class="space-description">
+            Three miles of wooded trails wind through our 80-acre property, with stations for prayer and benches for rest along the way.
+          </p>
+          <div class="features-list">
+            <div class="feature-item"><i class="fa-solid fa-check"></i> 3 miles of paths</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Prayer stations</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Wildlife observation</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Creek crossing</div>
+          </div>
+          <div class="time-info">
+            <i class="fa-regular fa-clock"></i> Daylight hours
+          </div>
+        </div>
+      </div>
+
+      <!-- Space 5: Hermitage Cabins (Image Left) -->
+      <div class="space-item">
+        <div class="space-image">
+          <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=1000" alt="Hermitage Cabins">
+        </div>
+        <div class="space-details">
+          <h2>Hermitage Cabins</h2>
+          <p class="space-description">
+            Four small, private cabins at the edges of our property for those seeking extended solitude. Simple furnishings, wood stove, no electricity.
+          </p>
+          <div class="features-list">
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Complete solitude</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Wood-burning stove</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Kerosene lamps</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Meals delivered</div>
+          </div>
+          <div class="time-info">
+            <i class="fa-regular fa-clock"></i> By reservation
+          </div>
+        </div>
+      </div>
+
+      <!-- Space 6: Library & Reading Room (Image Right) -->
+      <div class="space-item reverse">
+        <div class="space-image">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000" alt="Library & Reading Room">
+        </div>
+        <div class="space-details">
+          <h2>Library & Reading Room</h2>
+          <p class="space-description">
+            A quiet space with 3,000+ volumes on spirituality, contemplation, and theology. Comfortable seating for study and reflection.
+          </p>
+          <div class="features-list">
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Spiritual classics</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Contemporary authors</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Periodicals</div>
+            <div class="feature-item"><i class="fa-solid fa-check"></i> Quiet study space</div>
+          </div>
+          <div class="time-info">
+            <i class="fa-regular fa-clock"></i> Open 7:00 AM - 9:00 PM
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333333;
+  background-color: #fcfbf9;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HERO SECTION */
+.hero-header {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+  background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 33, 26, 0.78);
+  z-index: 1;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+}
+
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.logo-icon {
+  width: 38px; height: 38px;
+  background: #3e4d3c; color: #b8c9b5;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-text h3 { font-family: 'Georgia', serif; font-size: 1.1rem; font-weight: 400; }
+.logo-text span { font-size: 0.72rem; color: #a3b0a0; }
+
+.nav-links { display: flex; list-style: none; gap: 28px; }
+.nav-links a { color: #d5ded3; text-decoration: none; font-size: 0.9rem; }
+.nav-links a.active { color: #ffffff; font-weight: 500; }
+
+.nav-actions { display: flex; align-items: center; gap: 16px; }
+.theme-toggle { background: none; border: none; color: #fff; font-size: 1.1rem; cursor: pointer; }
+.nav-btn {
+  background-color: #435241; color: #fff;
+  padding: 10px 20px; border-radius: 20px; text-decoration: none; font-size: 0.88rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+  padding: 30px 20px 60px;
+}
+
+.hero-tag {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #a3b8a0;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-family: 'Georgia', serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #d8e0d7;
+}
+
+/* RESOURCES SECTION */
+.resources-section {
+  padding: 40px 0 80px;
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #f2eee8;
+  border: none;
+  color: #7d7265;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background-color: #435241;
+  color: #ffffff;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.resource-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid #efece6;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #eaf0e9;
+  color: #485646;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.card-icon.podcast-icon {
+  background-color: #fef4e5;
+  color: #d9822b;
+}
+
+.card-time {
+  font-size: 0.85rem;
+  color: #9e9487;
+}
+
+.resource-card h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #2c352b;
+  margin-bottom: 12px;
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #777777;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-author {
+  font-size: 0.82rem;
+  color: #9e9487;
+  margin-bottom: 16px;
+}
+
+.card-action {
+  color: #2c352b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* PRACTICES SECTION */
+.practices-section {
+  background-color: #f5f3ee;
+  padding: 90px 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-header h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #2c352b;
+  margin-bottom: 14px;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: #7d7265;
+  line-height: 1.6;
+}
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.practice-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.practice-card h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #2c352b;
+  margin-bottom: 12px;
+}
+
+.practice-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #777777;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.practice-time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #485646;
+}
+
+/* NEWSLETTER SECTION */
+.newsletter-section {
+  padding: 100px 0;
+  background-color: #fcfbf9;
+}
+
+.newsletter-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #eae7e1;
+  border-radius: 20px;
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.mail-icon {
+  font-size: 2rem;
+  color: #435241;
+  margin-bottom: 16px;
+}
+
+.newsletter-card h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #2c352b;
+  margin-bottom: 12px;
+}
+
+.newsletter-card p {
+  font-size: 0.98rem;
+  color: #7d7265;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto 16px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #dcd8d0;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.newsletter-form button {
+  background-color: #435241;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.privacy-note {
+  font-size: 0.78rem;
+  color: #a3998e;
+  display: block;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .cards-grid, .practices-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid, .practices-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .nav-links {
+    display: none;
+  }
+}
+</style>
+
+
+
+
+<body>
+
+
+
+<!-- HERO SECTION -->
+  <header class="hero-header">
+    <div class="hero-overlay"></div>
+    
+    <nav class="navbar">
+      <div class="nav-brand">
+        <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="logo-text">
+          <h3>Stillwater Retreat</h3>
+          <span>A Sanctuary for the Soul</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="retreats.html">Retreats</a></li>
+        <li><a href="spiritual driection.html">Spiritual Direction</a></li>
+        <li><a href="sacred spaces.html">Sacred Spaces</a></li>
+        <li><a href="resources.html" class="active">Resources</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle"><i class="far fa-moon"></i></button>
+        <a href="#" class="nav-btn">Book a Retreat</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <span class="hero-tag">RESOURCES</span>
+      <h1 class="hero-title">Nourishment for the Journey</h1>
+      <p class="hero-subtitle">
+        These resources are offered freely to support your contemplative practice—whether you're at Stillwater or at home.
+      </p>
+    </div>
+  </header>
+
+  <!-- RESOURCES SECTION -->
+  <section class="resources-section">
+    <div class="container">
+      
+      <!-- FILTER BUTTONS -->
+      <div class="filter-bar">
+        <button class="filter-btn active"><i class="fa-solid fa-box-archive"></i> All Resources</button>
+        <button class="filter-btn"><i class="fa-regular fa-clock"></i> Guided Meditations</button>
+        <button class="filter-btn"><i class="fa-regular fa-book-open"></i> Readings</button>
+        <button class="filter-btn"><i class="fa-regular fa-heart"></i> Prayer Guides</button>
+        <button class="filter-btn"><i class="fa-solid fa-microphone"></i> Podcast</button>
+      </div>
+
+      <!-- RESOURCE CARDS GRID -->
+      <div class="cards-grid">
+        
+        <!-- Card 1 -->
+        <div class="resource-card">
+          <div class="card-header">
+            <div class="card-icon"><i class="fa-regular fa-clock"></i></div>
+            <span class="card-time">20 min</span>
+          </div>
+          <h3>Introduction to Centering Prayer</h3>
+          <p class="card-desc">A 20-minute guided session introducing the practice of centering prayer with Sr. Margaret Anne.</p>
+          <div class="card-author">by Sr. Margaret Anne</div>
+          <a href="#" class="card-action"><i class="fa-regular fa-circle-play"></i> Listen Now</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="resource-card">
+          <div class="card-header">
+            <div class="card-icon"><i class="fa-regular fa-clock"></i></div>
+            <span class="card-time">30 min</span>
+          </div>
+          <h3>Lectio Divina with Psalm 23</h3>
+          <p class="card-desc">Walk through the four movements of sacred reading with this beloved psalm.</p>
+          <div class="card-author">by Fr. David Brennan</div>
+          <a href="#" class="card-action"><i class="fa-regular fa-circle-play"></i> Listen Now</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="resource-card">
+          <div class="card-header">
+            <div class="card-icon"><i class="fa-regular fa-heart"></i></div>
+            <span class="card-time">15 min</span>
+          </div>
+          <h3>The Daily Examen</h3>
+          <p class="card-desc">A guide to the Ignatian practice of reviewing your day with God.</p>
+          <div class="card-author">by Stillwater Staff</div>
+          <a href="#" class="card-action"><i class="fa-regular fa-book-open"></i> Read Now</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="resource-card">
+          <div class="card-header">
+            <div class="card-icon podcast-icon"><i class="fa-solid fa-microphone"></i></div>
+          </div>
+          <h3>Walking in the Spirit</h3>
+          <p class="card-desc">Our monthly podcast exploring contemplative themes with guest spiritual directors.</p>
+          <div class="card-author">by Stillwater Retreat</div>
+          <a href="#" class="card-action"><i class="fa-regular fa-circle-play"></i> Listen Now</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="resource-card">
+          <div class="card-header">
+            <div class="card-icon"><i class="fa-regular fa-book-open"></i></div>
+          </div>
+          <h3>Entering the Silence</h3>
+          <p class="card-desc">An essay on preparing for your first silent retreat and what to expect.</p>
+          <div class="card-author">by Sr. Margaret Anne</div>
+          <a href="#" class="card-action"><i class="fa-regular fa-book-open"></i> Read Now</a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="resource-card">
+          <div class="card-header">
+            <div class="card-icon"><i class="fa-regular fa-clock"></i></div>
+            <span class="card-time">12 min</span>
+          </div>
+          <h3>Breath Prayer Practice</h3>
+          <p class="card-desc">Learn to pray with your breath using simple, ancient techniques.</p>
+          <div class="card-author">by Brother Thomas</div>
+          <a href="#" class="card-action"><i class="fa-regular fa-circle-play"></i> Listen Now</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEMPLATIVE PRACTICES SECTION -->
+  <section class="practices-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contemplative Practices</h2>
+        <p>A brief introduction to the practices we teach at Stillwater. Each can be done at home with no special equipment.</p>
+      </div>
+
+      <div class="practices-grid">
+        
+        <div class="practice-card">
+          <h3>Centering Prayer</h3>
+          <p>A method of silent prayer that prepares us to receive the gift of contemplative prayer, opening our minds and hearts to God beyond words.</p>
+          <div class="practice-time">20 MINUTES</div>
+        </div>
+
+        <div class="practice-card">
+          <h3>Lectio Divina</h3>
+          <p>Sacred reading of Scripture—a slow, contemplative approach to engaging with the Word that invites transformation.</p>
+          <div class="practice-time">30-45 MINUTES</div>
+        </div>
+
+        <div class="practice-card">
+          <h3>Walking Meditation</h3>
+          <p>Mindful walking through our grounds, bringing awareness to each step as a form of moving prayer.</p>
+          <div class="practice-time">15-30 MINUTES</div>
+        </div>
+
+        <div class="practice-card">
+          <h3>Labyrinth Walk</h3>
+          <p>An ancient practice of walking a winding path as a metaphor for the spiritual journey—releasing, receiving, returning.</p>
+          <div class="practice-time">20-40 MINUTES</div>
+        </div>
+
+        <div class="practice-card">
+          <h3>Examen</h3>
+          <p>A daily review of consciousness, noticing where God was present and where we may have missed the invitation.</p>
+          <div class="practice-time">15 MINUTES</div>
+        </div>
+
+        <div class="practice-card">
+          <h3>Silent Sitting</h3>
+          <p>Simply being present in silence, without agenda, allowing God to work in the depths of our being.</p>
+          <div class="practice-time">OPEN</div>
+        </div>
+
+      </div>
+    </div>
+  </section>  
+
+  <!-- NEWSLETTER / WEEKLY STILLNESS SECTION -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-card">
+        <div class="mail-icon"><i class="fa-regular fa-envelope"></i></div>
+        <h2>Weekly Stillness</h2>
+        <p>A brief weekly email with a reflection, prayer, or practice to carry stillness into your week. Unsubscribe anytime.</p>
+        
+        <form class="newsletter-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        
+        <span class="privacy-note">We respect your inbox and your privacy. No spam, ever.</span>
+      </div>
+    </div>
+  </section>
+    
+</body>
+</html>
